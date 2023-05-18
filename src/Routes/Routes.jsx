@@ -1,28 +1,42 @@
 import { createBrowserRouter } from "react-router-dom";
-import Main from "../Leyout/Main";
-import Home from "../Pages/Home/Home/Home";
+import Main from "../Layout/Main";
+import Home from "../Pages/Home/Home";
+// import AllToy from "../Pages/AllToy/AllToy";
 import Login from "../Pages/Login/Login";
-import SignUp from "../Pages/Login/SignUp/SignUp";
+import Register from "../Pages/Register/Register";
+import PrivateRoute from "./PrivateRoute";
+import ToyDetails from "../Pages/Home/ToyDetails";
 
 const router = createBrowserRouter([
+  {
+    path: "/",
+    element:<Main />
+  ,
+  children:[
     {
-      path: "/",
-      element:<Main></Main> ,
-      children:[
-        {
-            path: '/home',
-            element: <Home></Home>
-        },
-        {
-            path:'login',
-            element:<Login></Login>
-        },
-        {
-            path:'signup',
-            element:<SignUp></SignUp>
-        }
-      ]
+      path:'/',
+      element:<Home />
     },
-  ]);
-
-  export default router;
+    // {
+    //   path:'/toys',
+    //   element:<AllToy />
+    // },
+    
+    {
+      path:'/login',
+      element:<Login />
+    },
+    {
+      path:'/register',
+      element: <Register />
+    },
+    {
+      path:'/toys/:id',
+      element: <PrivateRoute> <ToyDetails/> </PrivateRoute>,
+      loader:({params})=>fetch(`http://localhost:5000/toys/${params.id}`)
+     
+    }
+  ]
+  },
+]);
+export default router;
