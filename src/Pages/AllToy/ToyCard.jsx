@@ -1,13 +1,13 @@
+import React from 'react';
 import { FaArrowRight, FaRegStar, FaStar } from 'react-icons/fa';
 import Rating from 'react-rating';
-
 import { Link } from 'react-router-dom';
 
 const ToyCard = ({toy}) => {
   const {_id,description,picture_url,available_quantity,rating,price,seller_name,name,seller_email}= toy;
     return (
        <div >
-         <div className="card card-compact w-96 bg-base-100 shadow-xl h-full ">
+         <div className="card card-compact  w-80 bg-base-100 shadow-xl h-full ">
         <img src={picture_url} alt="toy" />
         <div className="card-body">
           <h2 className="font-bold text-center">{rating}</h2>

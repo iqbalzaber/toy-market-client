@@ -3,7 +3,7 @@ import logo from '../assets/Explore.png'
 
 const Footer = () => {
     return (
-        <footer className="footer p-10 bg-base-200 text-base-content">
+        <footer className="footer p-10 text-base-content bg-orange-50">
         <div>
         <img className='w-14' src={logo} alt="" />
             <p>ACME Industries Ltd.<br />Providing reliable tech since 1992</p>

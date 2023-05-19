@@ -1,17 +1,19 @@
-import { useEffect, useState } from 'react';
+import  { useEffect, useState } from 'react';
 import ToyCard from '../AllToy/ToyCard';
 
 const CategoriesTab = () => {
   const [jobs, setJob] = useState([]);
-  const [activeTab, setActiveTab] = useState("remote");
+  const [activeTab, setActiveTab] = useState(" ");
 
   useEffect(() => {
-    fetch('http://localhost:5000/toys')
+    fetch(`http://localhost:5000/allToysByCategory/${activeTab}`)
       .then((res) => res.json())
       .then((result) => {
         setJob(result);
       });
   }, [activeTab]);
+//   const result =  jobs.filter(job=> job.sub_category == activeTab);
+//  setJob(result);
 
   const handleTabClick = (tabName) => {
     setActiveTab(tabName); }
@@ -20,34 +22,43 @@ const CategoriesTab = () => {
   
   return (
     <div>
-    <h1 className="title text-center mt-5 p-5">Available Job's</h1>
-    <div className="tab-container text-center">
-      <div className="text-center w-100 m-auto">
-        <div className="tabs d-flex justify-content-center align-items-center">
+    <h1 className="text-3xl font-extrabold text-center mb-5 ">CHOSE YOUR <span className=' text-red-300'>CETEGORY</span></h1>
+    <div className=" text-center flex align-middle justify-center">
+      <div className="text-center w-100 mx-auto">
+        <div className="tabs gap-1 ">
           <div
-            onClick={() => handleTabClick("remote")}
+            onClick={() => handleTabClick("TRACTOR")}
             className={`tab  tab2 remote ${
-              activeTab == "remote" ? " bg-danger text-white" : ""
+              activeTab == "TRACTOR" ? "btn btn-outline btn-info" : "btn btn-active btn-ghost"
             }`}
           >
-            Remote
+          <button className=''>Racing Car</button>
           </div>
           <div
-            onClick={() => handleTabClick("offline")}
+            onClick={() => handleTabClick("racing")}
             className={`tab  tab2 Offline ${
-              activeTab == "offline" ? " bg-danger text-white" : ""
+              activeTab == "racing" ? " btn btn-outline btn-error" : "btn btn-active btn-ghost"
             }`}
           >
-            Offline
+            Tractor
+          </div>
+          <div
+            onClick={() => handleTabClick("Dancing")}
+            className={`tab  tab2 Offline ${
+              activeTab == "Dancing" ? " btn btn-outline btn-success" : "btn btn-active btn-ghost"
+            }`}
+          >
+           Babe Toys
           </div>
         </div>
       </div>
     </div>
-    <div className="jobs-container mt-5 row">
-      {/* {jobs?.map((toy) => (
-        <ToyCard toy={toy}
-        ></ToyCard>
-      ))} */}
+    <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-3 mt-10 my-container">
+      {jobs?.map((toy) => (
+        <ToyCard
+        key={toy._id}
+        toy={toy}></ToyCard>
+      ))}
     </div>
   </div>
   );
