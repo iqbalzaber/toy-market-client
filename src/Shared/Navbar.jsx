@@ -1,24 +1,24 @@
-import  { useContext, useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { Bars3BottomRightIcon, XMarkIcon } from "@heroicons/react/24/solid";
 import { AiFillCar } from "react-icons/ai";
 import { AuthContext } from "../Providers/AuthProvider";
 
 const Navbar = () => {
-  const {user,logOut} = useContext(AuthContext)
+  const { user, logOut, updateUrl } = useContext(AuthContext);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const handleLogOut=()=>{
-      logOut()
-      .then(()=>{
-        localStorage.removeItem('doctors');
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {
+        localStorage.removeItem("doctors");
       })
-      .catch(error=>{
+      .catch((error) => {
         console.log(error);
-      })
-    }
+      });
+  };
 
   return (
-    <div className="bg-orange-50 py-5 sm:max-w-xl md:max-w-full lg:max-w-full md:px-24 lg:px-8">
+    <div className="bg-orange-50  py-7 mx-auto sm:max-w-xl md:max-w-full md:px-24 lg:px-8">
       <div className="relative flex items-center justify-between">
         {/* Logo Section */}
         <Link to="/" className="inline-flex items-center text-3xl">
@@ -50,7 +50,7 @@ const Navbar = () => {
           </li>
           <li>
             <NavLink
-              to="/applied"
+              to="/mytoy"
               className={({ isActive }) => (isActive ? "active" : "default")}
             >
               My Toys
@@ -58,7 +58,7 @@ const Navbar = () => {
           </li>
           <li>
             <NavLink
-              to="/blog"
+              to="/addToy"
               className={({ isActive }) => (isActive ? "active" : "default")}
             >
               Add a toy
@@ -73,18 +73,35 @@ const Navbar = () => {
             </NavLink>
           </li>
         </ul>
-        {
-          user? 
-         <>   <Link to={'/appoint'}><p className="font-bold text-green-500"><small >My Toys</small></p></Link>
-          <button onClick={handleLogOut} className="p-2 rounded btn btn-sm"> SignOut </button> 
-        
-  
-  
-         
-         </> :
-         <Link to={'/login'}>  <button className="btn btn-outline btn-warning">Appointment</button></Link>
-        }
-      
+        {user ? (
+          <>
+            {" "}
+            <Link to={"/appoint"}>
+              <p className="font-bold text-green-500">
+                <small>My Toys</small>
+              </p>
+            </Link>
+            <button onClick={handleLogOut} className="btn btn-outline btn-warning">
+              {" "}
+              SignOut{" "}
+            </button>
+            <div className="relative inline-block group">
+              <img
+                src="https://ibb.co/YtXcqkw"
+                alt="User Picture"
+                className="w-12 h-12 rounded-full"
+              />
+              <div className="opacity-0 bg-white p-2 rounded-md shadow-md absolute bottom-0 left-0 group-hover:opacity-100">
+                <span className="text-gray-800">Mr..</span>
+              </div>
+            </div>
+          </>
+        ) : (
+          <Link to={"/login"}>
+            {" "}
+            <button className="btn btn-outline btn-warning px-4 py-3"> SignIn </button>
+          </Link>
+        )}
 
         {/* Mobile Navbar Section */}
         <div className="lg:hidden">
@@ -148,7 +165,7 @@ const Navbar = () => {
                         to="/blog"
                         className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-400"
                       >
-                       add a toy
+                        add a toy
                       </Link>
                     </li>
                     <li>
@@ -156,7 +173,7 @@ const Navbar = () => {
                         to="/blog"
                         className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-400"
                       >
-                       Blogs
+                        Blogs
                       </Link>
                     </li>
                   </ul>
