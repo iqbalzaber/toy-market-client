@@ -6,6 +6,20 @@ const Footer = () => {
         <footer className="footer p-10 text-base-content bg-orange-50">
         <div>
         <img className='w-14' src={logo} alt="" />
+        <div className="flex items-center justify-center mt-8">
+        <input
+          className="px-4 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          type="Emai"
+          placeholder="Email..."
+         
+        />
+        <button
+         
+          className="px-4 py-2 bg-blue-500 text-white rounded-r-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
+        >
+          Enter
+        </button>
+      </div>
             <p>ACME Industries Ltd.<br />Providing reliable tech since 1992</p>
         </div>
         <div>

@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const ToyCard = ({toy}) => {
   const {_id,description,picture_url,available_quantity,rating,price,seller_name,name,seller_email}= toy || {};
     return (
-       <div >
+       <div className='ms-10' >
          <div className="card card-compact  w-80 bg-base-100 shadow-xl h-full ">
         <img src={picture_url} alt="toy" />
         <div className="card-body">

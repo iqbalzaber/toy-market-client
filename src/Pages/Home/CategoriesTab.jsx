@@ -1,4 +1,4 @@
-import  { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ToyCard from '../AllToy/ToyCard';
 
 const CategoriesTab = () => {
@@ -12,7 +12,8 @@ const CategoriesTab = () => {
         setToys(result);
       });
   }, [activeTab]);
-
+//   const result =  toys.filter(job=> job.sub_category == activeTab);
+//  setToys(result);
 
   const handleTabClick = (tabName) => {
     setActiveTab(tabName); }
@@ -21,7 +22,7 @@ const CategoriesTab = () => {
   
   return (
     <div>
-    <h1 className="text-3xl font-extrabold text-center mb-5">CHOSE YOUR <span className=' text-red-300'>CETEGORY</span></h1>
+    <h1 className="text-3xl font-extrabold text-center mb-5">Pick By <span className=' text-red-300'>Sub-Category</span></h1>
     <div className=" text-center flex align-middle justify-center">
       <div className="text-center w-100 mx-auto">
         <div className="tabs ">
@@ -36,18 +37,18 @@ const CategoriesTab = () => {
           <div
             onClick={() => handleTabClick("racing")}
             className={`tab  tab2 Offline ${
-              activeTab == "racing" ? " btn btn-ghost" : "btn btn-outline btn-info"
+              activeTab == "racing" ? "btn btn-ghost" : "btn btn-outline btn-success"
             }`}
           >
           Racing Car
           </div>
           <div
-            onClick={() => handleTabClick("Dancing")}
+            onClick={() => handleTabClick("dancing")}
             className={`tab  tab2 Offline ${
-              activeTab == "Dancing" ? " btn btn-ghost" : "btn btn-outline btn-error"
+              activeTab == "dancing" ? "btn btn-ghost" : "btn btn-outline btn-success"
             }`}
           >
-          Music Car
+          Toy Car
           </div>
         </div>
       </div>

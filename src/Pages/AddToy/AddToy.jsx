@@ -3,7 +3,7 @@ const AddToy = () => {
   const handleAddToy = () => {};
   return (
     <div className="bg-pink-50 p-24">
-      <h2 className="text-3xl text-center font-bold  "> add a coffee </h2>
+      <h2 className="text-3xl text-center font-bold  "> ADD YOUR TOY </h2>
       <form onSubmit={handleAddToy}>
         {/* row  coffee name */}
         <div className="md:flex gap-4">

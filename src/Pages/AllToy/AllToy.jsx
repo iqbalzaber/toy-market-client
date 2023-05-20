@@ -8,7 +8,7 @@ const AllToy = () => {
   console.log(allToys);
 
   const handleSearch = () => {
-    fetch(`http://localhost:5000/allToySearch${searchText}`)
+    fetch(`http://localhost:5000/getToyByText${searchText}`)
       .then((response) => response.json())
       .then((data) => setSearchText(data))
       .catch((error) =>{
