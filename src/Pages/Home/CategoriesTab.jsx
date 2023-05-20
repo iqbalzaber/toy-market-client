@@ -22,7 +22,7 @@ const CategoriesTab = () => {
   
   return (
     <div>
-    <h1 className="text-3xl font-extrabold text-center mb-5">Pick By <span className=' text-red-300'>Sub-Category</span></h1>
+    <h1 className="text-3xl font-extrabold text-center mb-5">CHOSE YOUR<span className=' text-red-300'> CETEGORY</span></h1>
     <div className=" text-center flex align-middle justify-center">
       <div className="text-center w-100 mx-auto">
         <div className="tabs ">
