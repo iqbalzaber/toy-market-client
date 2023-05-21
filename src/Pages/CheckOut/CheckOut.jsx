@@ -38,7 +38,7 @@ const CheckOut = () => {
     };
     console.log(order);
 
-    fetch('https://b7a11-toy-marketplace-server-side-iqbalzaber-git-main-youaredog.vercel.app/order' ,{
+    fetch('https://b7a11-toy-marketplace-server-side-iqbalzaber-kmej2i4sm.vercel.app/order' ,{
         method:'POST',
         headers:{
           'content-type': 'application/json'

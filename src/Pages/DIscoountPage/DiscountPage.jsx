@@ -43,8 +43,8 @@ const DiscountPage = () => {
               <h2 className="text-5xl font-extrabold font-serif mt-5  text-blue-gray-900">Hot deal this week</h2>
               <h5 className="text-2xl mt-3 font-bold  font-sans">New Collection Up to 50% OFF!!</h5>
 
-              <div className="radial-progress bg-primary text-primary-content border-4 border-primary mt-3" style={{ "--value": 70 }}>Racing</div>
-              <div className="radial-progress bg-primary text-secondary-content border-4 border-secondary mt-3  ml-3" style={{ "--value": 70 }}>Dancing</div>
+              <div className="radial-progress bg-primary text-primary-content border-4 border-primary mt-3" style={{ "--value": 70 }}>racing</div>
+              <div className="radial-progress bg-primary text-secondary-content border-4 border-secondary mt-3  ml-3" style={{ "--value": 70 }}>dancing</div>
               <div className="radial-progress bg-accent text-accent-content border-4 border-accent mt-3 ml-3" style={{ "--value": 70 }}>Tractor</div>
             </div>
           </div>

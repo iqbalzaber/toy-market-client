@@ -31,7 +31,7 @@ const AddToy = () => {
     };
     console.log(addNew);
 
-    fetch("https://b7a11-toy-marketplace-server-side-iqbalzaber-git-main-youaredog.vercel.app/toys", {
+    fetch("https://b7a11-toy-marketplace-server-side-iqbalzaber-kmej2i4sm.vercel.app/toys", {
       method: "POST",
       headers: {
         "content-type": "application/json",

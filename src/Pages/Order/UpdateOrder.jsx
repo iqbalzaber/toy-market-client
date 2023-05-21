@@ -26,7 +26,7 @@ const UpdateOrder = () => {
 
 
 // send data to mongoDb
-fetch(`https://b7a11-toy-marketplace-server-side-iqbalzaber-git-main-youaredog.vercel.app/order/${_id}`, {
+fetch(`https://b7a11-toy-marketplace-server-side-iqbalzaber-kmej2i4sm.vercel.app/order/${_id}`, {
     method: "PUT",
     headers: {
       "content-type": "application/json",

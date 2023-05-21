@@ -28,7 +28,7 @@ const GalleryCard = () => {
                 </div>
                 <div className='text-center'>
                    <p>price: sujfhgu</p>
-                    <p>review: ufhgdasiufduasfhdiuaspspspspspspspspspspspspspspspspspspspspspspspspspspspspspsppcxhjshiuhdf7uhasuifhd7uery</p>
+                    <p>review: </p>
                    </div>
            </div>
            

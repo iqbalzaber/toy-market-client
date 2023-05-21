@@ -8,7 +8,7 @@ const AllToy = () => {
   // const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("https://b7a11-toy-marketplace-server-side-iqbalzaber-git-main-youaredog.vercel.app/toys")
+    fetch("https://b7a11-toy-marketplace-server-side-iqbalzaber-kmej2i4sm.vercel.app/toys")
   .then((response) => response.json())
   .then((data) => {
     setAllToys(data);
@@ -16,7 +16,7 @@ const AllToy = () => {
 }, []);
 
 const handleSearch = () => {
-    fetch(`https://b7a11-toy-marketplace-server-side-iqbalzaber-git-main-youaredog.vercel.app/getToyByText${searchText}`)
+    fetch(`https://b7a11-toy-marketplace-server-side-iqbalzaber-kmej2i4sm.vercel.app/getToyByText${searchText}`)
     .then((response) => response.json())
     .then((data) => {
       setAllToys(data);

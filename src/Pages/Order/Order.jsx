@@ -7,7 +7,7 @@ const Order = () => {
     const[orders,setOrders] = useState();
     const { user } = useContext(AuthContext);
 
-    const url = `https://b7a11-toy-marketplace-server-side-iqbalzaber-git-main-youaredog.vercel.app/order?email=${user?.email}`;
+    const url = `https://b7a11-toy-marketplace-server-side-iqbalzaber-kmej2i4sm.vercel.app/order?email=${user?.email}`;
 
     useEffect(() => {
       fetch(url)
@@ -28,7 +28,7 @@ const Order = () => {
         confirmButtonText: "Yes, delete it!",
       }).then((result) => {
         if (result.isConfirmed) {
-          fetch(`https://b7a11-toy-marketplace-server-side-iqbalzaber-git-main-youaredog.vercel.app/order/${id}`, {
+          fetch(`https://b7a11-toy-marketplace-server-side-iqbalzaber-kmej2i4sm.vercel.app/order/${id}`, {
             method: "DELETE",
           })
             .then((res) => res.json())
