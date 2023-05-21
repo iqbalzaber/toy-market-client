@@ -26,7 +26,7 @@ const UpdateOrder = () => {
 
 
 // send data to mongoDb
-fetch(`http://localhost:5000/order/${_id}`, {
+fetch(`https://b7a11-toy-marketplace-server-side-iqbalzaber-git-main-youaredog.vercel.app/order/${_id}`, {
     method: "PUT",
     headers: {
       "content-type": "application/json",
@@ -39,7 +39,7 @@ fetch(`http://localhost:5000/order/${_id}`, {
       if (data.modifiedCount > 0 ) {
         Swal.fire({
           title: "Success!",
-          text: "Coffee added Successfully ",
+          text: "Toy added Successfully ",
           icon: "success",
           confirmButtonText: "okay",
         });

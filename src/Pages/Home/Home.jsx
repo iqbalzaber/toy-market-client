@@ -5,6 +5,10 @@ import Customer from './Customer';
 import CategoriesTab from './CategoriesTab';
 import Gallery from './Gallery/Gallery';
 import Inpage from './information/Inpage';
+import DiscountPage from '../DIscoountPage/DiscountPage';
+// import AnotherBennnr from './Gallery/AnotherBenner';
+
+
 
 const Home = () => {
     return (
@@ -23,6 +27,8 @@ const Home = () => {
             <div>
                 <Inpage></Inpage>
             </div>
+           {/* <AnotherBenner/> */}
+           <DiscountPage/>
         </div>
     );
 };

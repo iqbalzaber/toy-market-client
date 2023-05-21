@@ -1,6 +1,60 @@
+import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 const AddToy = () => {
-  const handleAddToy = () => {};
+  const { user } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const handleAddToy = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const name = form.name.value;
+    const price = form.price.value;
+    const description = form.details.value;
+    const picture_url = form.photo.value;
+    const rating = form.rating.value;
+    const available_quantity = form.quantity.value;
+    const seller_email = form.seller_email.value;
+    const seller_name = form.seller_name.value;
+    const sub_category = form.sub_category.value;
+    const addNew = {
+      name,
+      price,
+      description,
+      picture_url,
+      rating,
+      available_quantity,
+      seller_email,
+      seller_name,
+      sub_category,
+    };
+    console.log(addNew);
+
+    fetch("https://b7a11-toy-marketplace-server-side-iqbalzaber-git-main-youaredog.vercel.app/toys", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(addNew),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.insertedId) {
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Your Toys has been added successfully",
+            showConfirmButton: false,
+            timer: 2000,
+          });
+          navigate("/toys");
+        }
+      });
+
+    // _id,description,picture_url,available_quantity,rating,price,seller_name,name,seller_email
+  };
   return (
     <div className="bg-pink-50 p-24">
       <h2 className="text-3xl text-center font-bold  "> ADD YOUR TOY </h2>

@@ -3,9 +3,10 @@ import { Link, NavLink } from "react-router-dom";
 import { Bars3BottomRightIcon, XMarkIcon } from "@heroicons/react/24/solid";
 import { AiFillCar } from "react-icons/ai";
 import { AuthContext } from "../Providers/AuthProvider";
+import profile from  '../assets/me-zaber.jpeg'
 
 const Navbar = () => {
-  const { user, logOut, updateUrl } = useContext(AuthContext);
+  const { user, logOut,  } = useContext(AuthContext);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const handleLogOut = () => {
     logOut()
@@ -87,7 +88,7 @@ const Navbar = () => {
             </button>
             <div className="relative inline-block group">
               <img
-                src="https://ibb.co/YtXcqkw"
+                src={profile}
                 alt="User Picture"
                 className="w-12 h-12 rounded-full"
               />

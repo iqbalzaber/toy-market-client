@@ -44,14 +44,14 @@ const router = createBrowserRouter([
     
     {
       path:'/toys/:id',
-      element: <PrivateRoute> <ToyDetails/> </PrivateRoute>,
-      loader:({params})=>fetch(`http://localhost:5000/toys/${params.id}`)
+      element: <PrivateRoute> {" "} <ToyDetails/> {" "} </PrivateRoute>,
+      loader:({params})=>fetch(`https://b7a11-toy-marketplace-server-side-iqbalzaber-git-main-youaredog.vercel.app/toys/${params.id}`)
      
     },
     {
       path:'/checkout/:id',
       element: <CheckOut />,
-      loader:({params})=>fetch(`http://localhost:5000/toys/${params.id}`)
+      loader:({params})=>fetch(`https://b7a11-toy-marketplace-server-side-iqbalzaber-git-main-youaredog.vercel.app/toys/${params.id}`)
     },
     {
       path:'/mytoy',
@@ -60,18 +60,21 @@ const router = createBrowserRouter([
     {
       path:'/order/:id',
       element:<UpdateOrder />,
-      loader:({params})=>fetch(`http://localhost:5000/order/${params.id}`)
+      loader:({params})=>fetch(`https://b7a11-toy-marketplace-server-side-iqbalzaber-git-main-youaredog.vercel.app/order/${params.id}`)
     },
     {
       path:'/toys',
       element:<AllToy />,
-      loader: ()=> fetch('http://localhost:5000/toys')
+      loader: ()=> fetch('https://b7a11-toy-marketplace-server-side-iqbalzaber-git-main-youaredog.vercel.app/toys')
     
     },
     {
       path:'/details/:id',
-      element: <PrivateRoute><DetailsAllToys /></PrivateRoute>,
-      loader:({params})=>fetch(`http://localhost:5000/toys/${params.id}`)
+      element: 
+      <PrivateRoute>
+        <DetailsAllToys />
+      </PrivateRoute>,
+      loader:({params})=>fetch(`https://b7a11-toy-marketplace-server-side-iqbalzaber-git-main-youaredog.vercel.app/toys/${params.id}`)
 
     },
     {
